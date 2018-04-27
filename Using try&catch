@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Even
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            int realNumber=0;
+            while (true)
+            {
+                string number = Console.ReadLine();
+                try
+                {
+                    realNumber = int.Parse(number);
+                    if (realNumber%2==0)
+                    {
+                        Console.WriteLine("Even number entered: "+realNumber);
+                    }
+                    else
+                    {
+                        Console.WriteLine("The number is not even.");
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid number");
+                }
+            }
+        }
+    }
+}
