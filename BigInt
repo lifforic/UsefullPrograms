@@ -1,0 +1,40 @@
+using System;
+using System.Numerics;
+
+namespace BigInt
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int snowballs = int.Parse(Console.ReadLine());
+            BigInteger snowballValue = 0;
+            int bestSnow=0, bestTime=0, bestQuality=0;
+            BigInteger bestValue =0;
+
+            for (int i = 0; i < snowballs; i++)
+            {
+                int snowballSnow = int.Parse(Console.ReadLine());
+                int snowballTime = int.Parse(Console.ReadLine());
+                int snowballQuality = int.Parse(Console.ReadLine());
+
+                snowballValue =BigInteger.Pow(snowballSnow / snowballTime, snowballQuality);
+                if (i==0)
+                {
+                    bestValue =snowballValue;
+                    bestSnow = snowballSnow;
+                    bestTime = snowballTime;
+                    bestQuality = snowballQuality;
+                }
+                else if (snowballValue>bestValue)
+                {
+                    bestValue = snowballValue;
+                    bestSnow = snowballSnow;
+                    bestTime = snowballTime;
+                    bestQuality = snowballQuality;
+                }
+            }
+            Console.WriteLine("{0} : {1} = {2} ({3})",bestSnow,bestTime,bestValue,bestQuality);
+        }
+    }
+}
